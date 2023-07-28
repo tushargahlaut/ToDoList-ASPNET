@@ -1,17 +1,7 @@
 schemaVersion: 2.2.0
 metadata:
-  name: net-6.0-indigo
-  namespace: hackuser53-devspaces
-attributes:
-  controller.devfile.io/devworkspace-config:
-    name: devworkspace-config
-    namespace: ocp-devspaces
-  controller.devfile.io/scc: container-build
-  controller.devfile.io/storage-type: per-workspace
-projects:
-  - name: dotnet-web-simple
-    zip:
-      location: http://devfile-registry.ocp-devspaces.svc:8080/resources/v2/dotnet-web-simple.zip
+  attributes:
+    metadata-name-field: generateName
 components:
   - attributes:
       controller.devfile.io/merge-contribution: true
@@ -34,18 +24,6 @@ components:
           value: Development
         - name: ASPNETCORE_URLS
           value: http://*:8080
-        - name: CHE_DASHBOARD_URL
-          value: https://devspaces.apps.ocpnonprodcl02.goindigo.in
-        - name: CHE_PLUGIN_REGISTRY_URL
-          value: https://devspaces.apps.ocpnonprodcl02.goindigo.in/plugin-registry/v3
-        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
-          value: http://plugin-registry.ocp-devspaces.svc:8080/v3
-        - name: CLUSTER_CONSOLE_URL
-          value: https://console-openshift-console.apps.ocpnonprodcl02.goindigo.in
-        - name: CLUSTER_CONSOLE_TITLE
-          value: OpenShift console
-        - name: OPENVSX_REGISTRY_URL
-          value: https://open-vsx.org
       image: quay.io/balki404/dotnet-udi9:6.0
       memoryLimit: 2Gi
       mountSources: true
